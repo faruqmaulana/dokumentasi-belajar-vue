@@ -1,14 +1,23 @@
 <template>
-  <div>{{ message }}</div>
-  <span :title="message">Hover aku</span>
+  <div v-if="status">Ini tampil</div>
+  <button @click="setStatus">toogle</button>
+  <div v-if="status">true</div>
+  <div v-else-if="status2">false</div>
+  <div v-else>arrrghh</div>
 </template>
 
 <script>
 
 export default {
-  data(){
+  data() {
     return {
-      message: 'hello world'
+      status: false,
+      status2: true
+    }
+  },
+  methods: {
+    setStatus(){
+      this.status = !this.status
     }
   }
 }
