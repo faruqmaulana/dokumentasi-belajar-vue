@@ -1,9 +1,9 @@
 <template>
-  <div v-if="status">Ini tampil</div>
-  <button @click="setStatus">toogle</button>
-  <div v-if="status">true</div>
-  <div v-else-if="status2">false</div>
-  <div v-else>arrrghh</div>
+  <ol>
+    <li v-for="(todo, index) in todos" :key="todo.id">
+      {{ index }} {{ todo.activity }}
+    </li>
+  </ol>
 </template>
 
 <script>
@@ -11,13 +11,11 @@
 export default {
   data() {
     return {
-      status: false,
-      status2: true
-    }
-  },
-  methods: {
-    setStatus(){
-      this.status = !this.status
+      todos:[
+        { id:1, activity: 'menyapu' }, 
+        { id:2, activity: 'minum' },
+        { id:3, activity: 'menyapa' } 
+      ]
     }
   }
 }
