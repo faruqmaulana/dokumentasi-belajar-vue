@@ -1,5 +1,5 @@
 <template>
-  <div>Ini adalah child component</div>
+  <!-- <div>Ini adalah child component</div> -->
   <div>{{ text }}</div>
 </template>
 
