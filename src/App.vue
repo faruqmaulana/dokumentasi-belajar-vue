@@ -1,22 +1,13 @@
 <template>
-  <ol>
-    <li v-for="(todo, index) in todos" :key="todo.id">
-      {{ index }} {{ todo.activity }}
-    </li>
-  </ol>
+  Ini adalah parent component
+  <ChildComponent/>
 </template>
 
 <script>
 
+import ChildComponent from './components/ChildComponent.vue'
+
 export default {
-  data() {
-    return {
-      todos:[
-        { id:1, activity: 'menyapu' }, 
-        { id:2, activity: 'minum' },
-        { id:3, activity: 'menyapa' } 
-      ]
-    }
-  }
+  components: { ChildComponent }
 }
 </script>
