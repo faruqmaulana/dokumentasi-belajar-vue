@@ -1,25 +1,15 @@
 <template>
-  <div>{{ count }}</div>
-  <button @click="addCount" :disabled="count >= 10">Add 1</button>
-  <button @click="reduceCount" :disabled="count <= 0">min 1</button>
+  <div>{{ message }}</div>
+  <span :title="message">Hover aku</span>
 </template>
 
 <script>
+
 export default {
   data(){
     return {
-      message: 'Hello World',
-      count: 0
+      message: 'hello world'
     }
-  },
-  methods:{
-    addCount(){
-      this.count++
-    } ,
-    reduceCount(){
-      this.count--
-    } 
-  }  
-
+  }
 }
 </script>
