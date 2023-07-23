@@ -1,23 +1,19 @@
 <template>
-  <div v-if="status">Ini tampil</div>
-  <button @click="setStatus">toogle</button>
-  <div v-if="status">true</div>
-  <div v-else-if="status2">false</div>
-  <div v-else>arrrghh</div>
+  <div>
+    Ini adalah parent component
+  </div>
+  <child-component v-for="todo in todos" :key="todo" :text="todo"/>
 </template>
 
 <script>
 
+import ChildComponent from './components/ChildComponent.vue'
+
 export default {
-  data() {
+  components: { ChildComponent },
+  data(){
     return {
-      status: false,
-      status2: true
-    }
-  },
-  methods: {
-    setStatus(){
-      this.status = !this.status
+      todos : [ 'pertama', 'kedua', 'ketiga']
     }
   }
 }
